@@ -21,7 +21,7 @@ public class MainForm extends JFrame {
     public MainForm() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Close the application on JForm exit
         this.setTitle("Main Form");
-        this.setSize(600, 200);
+        this.setSize(800, 200);
         this.setLayout(new FlowLayout(FlowLayout.RIGHT));
         this.setVisible(true);
 
@@ -53,7 +53,8 @@ public class MainForm extends JFrame {
      * Todo: This method logs the object HashCode in a text file, after refactoring the code; show warning message if the HashCode of Calender1 doesn't equal Calender2 HashCode
      */
     private void showNewCalender() {
-        SwingCalendar sc = new SwingCalendar();
+        SwingCalendar sc = SwingCalendar.getInstance();
+        sc.CreateCalender();
         Util.Logger.log("Object HC: " + sc.hashCode()); // Log Calender hash code
     }
 

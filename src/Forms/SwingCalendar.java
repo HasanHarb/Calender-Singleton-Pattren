@@ -24,12 +24,17 @@ import java.util.Locale;
 
 public class SwingCalendar extends JFrame {
 
+    private static SwingCalendar swingCalendar = null;
     DefaultTableModel model;
     Calendar cal = new GregorianCalendar();
     JLabel label;
 
     // Todo: Refactor this constructor so the program will create only one copy of this object
-    SwingCalendar() { // Constructor
+    private  SwingCalendar() { // Constructor
+
+    }
+
+    public void CreateCalender() {
 
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setTitle("Swing Calendar");
@@ -97,4 +102,11 @@ public class SwingCalendar extends JFrame {
         }
 
     }
+    public static SwingCalendar getInstance(){
+        if(swingCalendar == null){
+            swingCalendar = new SwingCalendar();
+        }
+        return swingCalendar;
+    }
+
 }
